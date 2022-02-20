@@ -10,7 +10,8 @@ RUN dotnet restore
 # copy everything else and build app
 COPY HfWebApi/. ./HfWebApi/
 WORKDIR /source/HfWebApi
-RUN dotnet publish -c release -o /app --no-restore
+RUN dotnet publish -c release -o /app 
+#--no-restore
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
